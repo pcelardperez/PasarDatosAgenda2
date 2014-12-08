@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 public class Activity1 extends Activity{
 
+    //ESTA SERÁ UNA NUEVA RAMA
+
     final ArrayList<Persona> agenda = new ArrayList();
 
     @Override
