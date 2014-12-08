@@ -13,9 +13,10 @@ import android.widget.Toast;
 
 
 public class Activity2 extends Activity {
-
+    String largo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
         final Persona contacto = (Persona)getIntent().getExtras().getSerializable("contacto");
@@ -24,6 +25,7 @@ public class Activity2 extends Activity {
         final EditText txnumeroed = (EditText) findViewById(R.id.txtTelefonoEd);
 
         txnombreed.setText(contacto.getNombre());
+        largo=contacto.getNombre().toString();
         txnumeroed.setText(Integer.toString(contacto.getTelefono()));
 
         showToast();
@@ -32,10 +34,14 @@ public class Activity2 extends Activity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                contacto.setNombre(txnombreed.getText().toString());
-                contacto.setTelefono(Integer.parseInt(txnumeroed.getText().toString()));
+                String nom = txnombreed.getText().toString();
+                int tel = Integer.parseInt(txnumeroed.getText().toString());
+                Persona p = new Persona(nom, tel);
                 Intent intent = new Intent();
-                intent.putExtra("contacto",contacto);
+                Bundle reci = new Bundle();
+                reci.putString("largo", largo);
+                reci.putSerializable("contacto",p);
+                intent.putExtras(reci);
                 setResult(RESULT_OK,intent);
                 finish();
 
@@ -56,7 +62,7 @@ public class Activity2 extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity2, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

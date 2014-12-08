@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.pedro.pasardatosagenda.Activity3"
+            android:label="@string/title_activity_activity3" >
+        </activity>
     </application>
 
 </manifest>

@@ -14,5 +14,8 @@
     <string name="conNumero"> con telefono </string>
     <string name="btnBuscar">Buscar</string>
     <string name="ToastEdita">Edita el nombre o el numero</string>
+    <string name="title_activity_activity3">Activity3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btnListar">Listar</string>
 
 </resources>

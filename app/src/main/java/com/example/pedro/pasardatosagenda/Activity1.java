@@ -16,10 +16,9 @@ import java.util.ArrayList;
 
 
 public class Activity1 extends Activity{
+    //EN TEORIA ESTA ES LA RAMA NUEVA Y FUNCIONA!!
 
-    //ESTA SERÁ UNA NUEVA RAMA
-
-    final ArrayList<Persona> agenda = new ArrayList();
+    ArrayList<Persona> agenda = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,16 +97,30 @@ public class Activity1 extends Activity{
             }
 
         });
+
+        Button btnListar = (Button) findViewById(R.id.btnListar);
+        btnListar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Activity1.this, Activity3.class);
+                i.putExtra("array", agenda);
+                startActivityForResult(i,1);
+            }
+        });
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent datos){
-        //Persona contacto = (Persona)datos.getIntent().getExtras().getSerializable("contacto");
-        Persona contacto =(Persona) datos.getExtras().getSerializable("contacto");
+        // Persona contacto = (Persona)datos.getIntent().getExtras().getSerializable("contacto");
+        /*Persona contacto =(Persona) datos.getExtras().getSerializable("contacto");
         for(int i=0; i<agenda.size();i++){
             if(contacto.getNombre().equals(agenda.get(i).getNombre())||contacto.getTelefono()==agenda.get(i).getTelefono()){
                 agenda.get(i).setNombre(contacto.getNombre());
                 agenda.get(i).setTelefono(contacto.getTelefono());
             }
+        }*/
+        if(resultCode==RESULT_OK){
+            agenda=(ArrayList<Persona>)datos.getExtras().getSerializable("array");
         }
     }
 
