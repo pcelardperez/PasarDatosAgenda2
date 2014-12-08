@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Agenda</string>
+    <string name="nombre">Nombre</string>
+    <string name="action_settings">Opciones</string>
+    <string name="telefono">Telefono</string>
+    <string name="btnAñadir">Añadir</string>
+    <string name="linea">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</string>
+    <string name="btnEditar">Editar</string>
+    <string name="btnOK">OK</string>
+    <string name="title_activity_activity2">Agenda-Editar</string>
+    <string name="Añadido">Añadido el contacto </string>
+    <string name="conNumero"> con telefono </string>
+    <string name="btnBuscar">Buscar</string>
+    <string name="ToastEdita">Edita el nombre o el numero</string>
+
+</resources>
