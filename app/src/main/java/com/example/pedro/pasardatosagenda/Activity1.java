@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 
 public class Activity1 extends Activity{
-    //EN TEORIA ESTA ES LA RAMA NUEVA Y FUNCIONA!!
+    //ESTA ES LA RAMA QUE SE OCUPA DE LA AGENDA CON FRAGMENTOS
 
     ArrayList<Persona> agenda = new ArrayList();
 
