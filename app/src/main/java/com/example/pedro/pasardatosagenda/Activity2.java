@@ -68,6 +68,7 @@ public class Activity2 extends Activity {
 
         if (resultCode == RESULT_OK) {
             setResult(1,data);
+            finish();
         }
     }
 

@@ -19,5 +19,6 @@
     <string name="btnListar">Listar</string>
     <string name="title_activity_activity_borrar">ActivityBorrar</string>
     <string name="btnBorrar">Borrar</string>
+    <string name="btnOkEditar">Editar</string>
 
 </resources>

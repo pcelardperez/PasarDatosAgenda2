@@ -44,6 +44,23 @@ public class ActivityBorrar extends Activity {
 
             }
         });
+        Button btnOkEditar = (Button) findViewById(R.id.btnOkEditar);
+        btnOkEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nom = txnombreed.getText().toString();
+                int tel = Integer.parseInt(txnumeroed.getText().toString());
+                Persona p = new Persona(nom, tel);
+                Intent intent = new Intent();
+                Bundle reci = new Bundle();
+                reci.putString("largo", largo);
+                reci.putSerializable("contacto", p);
+                intent.putExtras(reci);
+                setResult(1, intent);
+                finish();
+
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -32,8 +32,10 @@ public class Activity3 extends ListActivity {
         startActivityForResult(i, 1);
     }
 
+
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        /*if (resultCode == RESULT_OK) {
+        if (resultCode == 1) {
             Persona person = (Persona) data.getExtras().getSerializable("contacto");
             String nombre = data.getExtras().getString("largo");
             for (Persona p1 : agenda) {
@@ -48,7 +50,7 @@ public class Activity3 extends ListActivity {
             setResult(RESULT_OK, i);
             finish();
         }
-        */
+
         if (resultCode ==RESULT_OK) {
             Persona person = (Persona) data.getExtras().getSerializable("contacto");
             String nombre = data.getExtras().getString("largo");
