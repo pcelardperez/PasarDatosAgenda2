@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class Activity1 extends Activity{
     //EN TEORIA ESTA ES LA RAMA NUEVA Y FUNCIONA!!
+    //Hacemos un Commit de la aplicación para el examen de PMDM
 
     ArrayList<Persona> agenda = new ArrayList();
 
