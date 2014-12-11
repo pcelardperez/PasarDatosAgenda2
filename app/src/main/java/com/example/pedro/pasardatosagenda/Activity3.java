@@ -27,17 +27,17 @@ public class Activity3 extends ListActivity {
 
 
     public void onListItemClick(ListView parent, View v, int posicion, long id){
-        Intent i = new Intent(Activity3.this, Activity2.class);
+        Intent i = new Intent(Activity3.this, ActivityBorrar.class);
         i.putExtra("contacto", agenda.get(posicion));
         startActivityForResult(i, 1);
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        /*if (resultCode == RESULT_OK) {
             Persona person = (Persona) data.getExtras().getSerializable("contacto");
             String nombre = data.getExtras().getString("largo");
-            for(Persona p1: agenda){
-                if(p1.getNombre().toString().equalsIgnoreCase(nombre)){
+            for (Persona p1 : agenda) {
+                if (p1.getNombre().toString().equalsIgnoreCase(nombre)) {
                     p1.setNombre(person.getNombre().toString());
                     p1.setTelefono(person.getTelefono());
                 }
@@ -48,7 +48,21 @@ public class Activity3 extends ListActivity {
             setResult(RESULT_OK, i);
             finish();
         }
+        */
+        if (resultCode ==RESULT_OK) {
+            Persona person = (Persona) data.getExtras().getSerializable("contacto");
+            String nombre = data.getExtras().getString("largo");
+            for (Persona p1 : agenda) {
+                if (p1.getNombre().toString().equalsIgnoreCase(nombre)) {
+                    agenda.remove(p1);
+                }
+            }
+            Intent i = new Intent();
+            i.putExtra("array", agenda);
+            setResult(RESULT_OK, i);
+            finish();
 
+        }
     }
 
 

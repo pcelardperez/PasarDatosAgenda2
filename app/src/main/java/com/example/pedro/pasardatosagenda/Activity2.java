@@ -19,13 +19,13 @@ public class Activity2 extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
-        final Persona contacto = (Persona)getIntent().getExtras().getSerializable("contacto");
+        final Persona contacto = (Persona) getIntent().getExtras().getSerializable("contacto");
 
         final EditText txnombreed = (EditText) findViewById(R.id.txtNombreEd);
         final EditText txnumeroed = (EditText) findViewById(R.id.txtTelefonoEd);
 
         txnombreed.setText(contacto.getNombre());
-        largo=contacto.getNombre().toString();
+        largo = contacto.getNombre().toString();
         txnumeroed.setText(Integer.toString(contacto.getTelefono()));
 
         showToast();
@@ -40,16 +40,38 @@ public class Activity2 extends Activity {
                 Intent intent = new Intent();
                 Bundle reci = new Bundle();
                 reci.putString("largo", largo);
-                reci.putSerializable("contacto",p);
+                reci.putSerializable("contacto", p);
                 intent.putExtras(reci);
-                setResult(RESULT_OK,intent);
+                setResult(RESULT_OK, intent);
                 finish();
 
             }
         });
 
-
+        Button btnBorrar = (Button) findViewById(R.id.btnBorrar);
+        btnBorrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nom = txnombreed.getText().toString();
+                int tel = Integer.parseInt(txnumeroed.getText().toString());
+                Persona p = new Persona(nom, tel);
+                Intent intent = new Intent(Activity2.this, ActivityBorrar.class);
+                Bundle reci = new Bundle();
+                reci.putString("largo", largo);
+                reci.putSerializable("contacto", p);
+                intent.putExtras(reci);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK) {
+            setResult(1,data);
+        }
+    }
+
+
 
     protected void showToast(){
         Context context = getApplicationContext();

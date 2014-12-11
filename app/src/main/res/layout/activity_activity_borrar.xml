@@ -44,11 +44,11 @@
         />
 
     <Button
-        android:id="@+id/btnOK"
+        android:id="@+id/btnOKBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/btnOK"
+        android:text="@string/btnBorrar"
         />
 
 </LinearLayout>
