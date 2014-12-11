@@ -24,6 +24,10 @@
             android:name="com.example.pedro.pasardatosagenda.Activity3"
             android:label="@string/title_activity_activity3" >
         </activity>
+        <activity
+            android:name="com.example.pedro.pasardatosagenda.ActivityBorrar"
+            android:label="@string/title_activity_activity_borrar" >
+        </activity>
     </application>
 
 </manifest>

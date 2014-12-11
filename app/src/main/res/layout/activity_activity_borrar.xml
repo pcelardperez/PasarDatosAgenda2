@@ -43,24 +43,12 @@
         android:inputType="phone"
         />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-        <Button
-            android:id="@+id/btnOK"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/btnOK"
-            />
-        <Button
-            android:id="@+id/btnBorrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/btnBorrar"
-            />
-    </LinearLayout>
+        android:layout_gravity="center"
+        android:text="@string/btnOK"
+        />
+
 </LinearLayout>

@@ -17,5 +17,7 @@
     <string name="title_activity_activity3">Activity3</string>
     <string name="hello_world">Hello world!</string>
     <string name="btnListar">Listar</string>
+    <string name="title_activity_activity_borrar">ActivityBorrar</string>
+    <string name="btnBorrar">Borrar</string>
 
 </resources>
